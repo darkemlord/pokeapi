@@ -12,6 +12,7 @@ const getPicture = (pokemon) => {
   picture.src = pokemon.sprites.front_default;
 }
 
+
 const apiFetch = async () => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${search.value}`);
@@ -20,6 +21,7 @@ const apiFetch = async () => {
       //aca va mi codigo
       getName(jsonResponse);
       getPicture(jsonResponse);
+      search.value = '';
     }
   } catch (error) {
     console.log(error)
